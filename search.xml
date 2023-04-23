@@ -191,6 +191,17 @@
     
     
     <entry>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/css/custom.css"/>
       <url>/css/custom.css</url>
@@ -213,9 +224,20 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>友人帐</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="如何添加？"><a href="#如何添加？" class="headerlink" title="如何添加？"></a>如何添加？</h1><p>符合以下要求：</p><ol><li>网站强制HTTPS</li><li>类型为个人博客</li><li>不适用公用域名（如xx.github.io, xx.js.org）</li><li>将我的网站加入友情链接中</li><li>可选：备案</li></ol><p>在评论区填写以下内容：</p><ol><li>站点名称</li><li>站点链接</li><li>站长头像</li><li>站点描述</li><li>站点截图 </li></ol><p>图片推荐使用128x128</p><p>站点截图可选</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>即刻短文</title>
+      <link href="/essay/index.html"/>
+      <url>/essay/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -235,28 +257,6 @@
     
     
     <entry>
-      <title>即刻短文</title>
-      <link href="/essay/index.html"/>
-      <url>/essay/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>运营模式与责任</title>
       <link href="/wechat/index.html"/>
       <url>/wechat/index.html</url>
@@ -268,11 +268,11 @@
     
     
     <entry>
-      <title>友人帐</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
-        <content type="html"><![CDATA[<h1 id="如何添加？"><a href="#如何添加？" class="headerlink" title="如何添加？"></a>如何添加？</h1><p>符合以下要求：</p><ol><li>网站强制HTTPS</li><li>类型为个人博客</li><li>不适用公用域名（如xx.github.io, xx.js.org）</li><li>将我的网站加入友情链接中</li><li>可选：备案</li></ol><p>在评论区填写以下内容：</p><ol><li>站点名称</li><li>站点链接</li><li>站长头像</li><li>站点描述</li><li>站点截图 </li></ol><p>图片推荐使用128x128</p><p>站点截图可选</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
