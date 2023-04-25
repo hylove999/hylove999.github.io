@@ -20670,11 +20670,17 @@ div#runtime {
 #workboard {
   font-size: 12px;
 }
-[data-theme="dark"] div#runtime {
-  color: #28b4c8;
-  box-shadow: 0 0 5px rgba(28, 69, 218, 0.71);
-  animation: flashlight 1s linear infinite alternate;
-}
+#runtimeTextTip {
+  font-size: calc(100% - 16px);
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  }
 #ghbdages .github-badge img {
   height: 20px;
   max-width: 150px;
