@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>阿里云盘自动签到教程</title>
+      <link href="/posts/b2ef.html"/>
+      <url>/posts/b2ef.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="本文为转载内容，请到文末访问原文链接，本文只做保留使用，如若侵权，请联系我进行删除处理！"><a href="#本文为转载内容，请到文末访问原文链接，本文只做保留使用，如若侵权，请联系我进行删除处理！" class="headerlink" title="本文为转载内容，请到文末访问原文链接，本文只做保留使用，如若侵权，请联系我进行删除处理！"></a><strong>本文为转载内容，请到文末访问原文链接，本文只做保留使用，如若侵权，请联系我进行删除处理！</strong></h2><p>今天在阿里云盘取资料的时候，弹窗告诉我。我的容量已用完，已达105%🤣。那还得了，开会员啊！在开会员的时候突然发现，<strong>签到就可以领会员！！！！</strong></p><p>那还不搞，开启分身，安装阿里，打开抓包软件，抓取签到api 及其参数。用 python 模拟请求签到。完美实现！到此就完了？</p><p>我们的<strong>教程</strong>呢 ？</p><p>当然，不会忘了大家！这不在github 上一搜。果然不止我遇到这个问题。</p><p><a href="https://github.com/mrabit">mrabit</a> 这位大佬就开源了他的代码。</p><p><img src="https://s2.loli.net/2023/04/28/ImBzn4wXOK835EY.webp" alt=""></p><p>接下来就是实现教程</p><h4 id="1-安装-docker-。（安装方法百度）"><a href="#1-安装-docker-。（安装方法百度）" class="headerlink" title="1.安装 docker 。（安装方法百度）"></a>1.安装 docker 。（安装方法百度）</h4><h4 id="2-获取-refresh-token"><a href="#2-获取-refresh-token" class="headerlink" title="2.获取 refresh_token"></a>2.获取 refresh_token</h4><ul><li>自动获取: 登录<a href="https://www.aliyundrive.com/drive/">阿里云盘</a>后，控制台粘贴 <code>JSON.parse(localStorage.token).refresh_token</code></li><li><img src="https://s2.loli.net/2023/04/28/Pr72xej1YgW9atv.webp" alt=""></li><li>手动获取: 登录<a href="https://www.aliyundrive.com/drive/">阿里云盘</a>后，可以在开发者工具 -&gt; Application -&gt; Local Storage 中的 <code>token</code> 字段中找到。<br>注意：不是复制整段 JSON 值，而是 JSON 里 <code>refresh_token</code> 字段的值，如下图所示红色部分：</li><li><img src="https://s2.loli.net/2023/04/28/xhXiqF79SYgpnWD.webp" alt=""></li></ul><h4 id="3-青龙面板添加依赖项"><a href="#3-青龙面板添加依赖项" class="headerlink" title="3.青龙面板添加依赖项"></a>3.青龙面板添加依赖项</h4><ul><li>axios</li></ul><h4 id="4-添加环境变量"><a href="#4-添加环境变量" class="headerlink" title="4.添加环境变量"></a>4.添加环境变量</h4><blockquote><p><code>CLIENT_ID</code> 需添加 <code>环境变量</code> 权限</p></blockquote><div class="table-container"><table><thead><tr><th>参数</th><th>说明</th></tr></thead><tbody><tr><td>refreshToken</td><td>阿里云盘 refresh_token, 添加多个可支持多账户签到</td></tr><tr><td>CLIENT_ID</td><td>可选项, 用于青龙面板 API 更新 refreshToken 字段</td></tr><tr><td>CLIENT_SECRET</td><td>可选项, 用于青龙面板 API 更新 refreshToken 字段</td></tr></tbody></table></div><p><code>CLIENT_ID</code> 和 <code>CLIENT_SECRET</code> 可在 <code>青龙面板 -&gt; 系统设置 -&gt; 应用设置 -&gt; 新建应用</code> 新增, 用于自动更新环境变量内 <code>refreshToken</code> 配置</p><h4 id="5-添加订阅"><a href="#5-添加订阅" class="headerlink" title="5.添加订阅"></a>5.添加订阅</h4><blockquote><p>添加订阅后可在定时任务列表发现新增任务, 可自行调整任务执行时间</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 命令/脚本</span><br><span class="line">ql repo https://github.com/mrabit/aliyundriveDailyCheck.git &quot;autoSignin&quot; &quot;&quot; &quot;qlApi&quot;</span><br></pre></td></tr></table></figure><h5 id="新版本"><a href="#新版本" class="headerlink" title="新版本:"></a>新版本:</h5><p><code>青龙面板 -&gt; 订阅管理 -&gt; 新建订阅</code>, 在名称输入框粘贴命令并执行</p><h5 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本:"></a>旧版本:</h5><p><code>青龙面板 -&gt; 定时任务 -&gt; 新建任务</code> 添加命令并执行</p><p><img src="https://s2.loli.net/2023/04/28/IwPtB7ohAXCzKmM.webp" alt=""></p><h1 id="—本文转载自："><a href="#—本文转载自：" class="headerlink" title="—本文转载自："></a>—本文转载自：</h1><p>关于页里的大多数在配置文件中，可以看一下。</p><div calss='anzhiyu-tag-link'><a class="tag-Link" target="_blank" href="https://blog.xiangming.site/posts/ce204b59/">    <div class="tag-link-tips">引用站外地址</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="background-image: url(https://api.iowen.cn/favicon/blog.xiangming.site/posts/ce204b59/.png);"></div>        <div class="tag-link-right">            <div class="tag-link-title">关于本站 | 湘铭呀!</div>            <div class="tag-link-sitename">湘铭呀！</div>        </div>        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>    </div>    </a></div><blockquote><p>-阿里云盘自动签到实现<br>文章作者: 湘铭呀!  ———原创<br>文章链接:<br><a href="http://blog.xiangming.site/posts/ce204b59/">http://blog.xiangming.site/posts/ce204b59/</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实用教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 自动签到 </tag>
+            
+            <tag> 青龙教程 </tag>
+            
+            <tag> 阿里云盘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>图床问题解决方案（转载）</title>
       <link href="/posts/1310.html"/>
       <url>/posts/1310.html</url>
@@ -13,7 +42,7 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 实用教程 </category>
           
       </categories>
       
@@ -40,7 +69,7 @@
       
       <categories>
           
-          <category> 杂项 </category>
+          <category> 生活日常 </category>
           
       </categories>
       
@@ -59,7 +88,7 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 博客相关 </category>
           
       </categories>
       
@@ -84,7 +113,7 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 博客相关 </category>
           
       </categories>
       
@@ -109,7 +138,7 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 博客相关 </category>
           
       </categories>
       
@@ -134,7 +163,7 @@
       
       <categories>
           
-          <category> 演示 </category>
+          <category> 实用教程 </category>
           
       </categories>
       
@@ -152,33 +181,6 @@
     
     
     <entry>
-      <title>整理服务器常用脚本</title>
-      <link href="/posts/8310.html"/>
-      <url>/posts/8310.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="唠叨"><a href="#唠叨" class="headerlink" title="唠叨"></a>唠叨</h1><p>UP主使用的环境是腾讯云轻量应用服务器：<strong>Ubuntu</strong>系统。</p><p><strong>CentOS系统可能会出现一些问题，请留意！</strong></p><p>部分代码来自<a href="https://blog.laoda.de/">@咕咕鸽</a>，感谢咕咕鸽的提供！</p><h1 id="宝塔面板"><a href="#宝塔面板" class="headerlink" title="宝塔面板"></a>宝塔面板</h1><h2 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h2><p>来自<a href="https://bt.cn">宝塔官网</a></p><p>Centos</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh https://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh ed8484bec</span><br></pre></td></tr></table></figure><p>Ubuntu/DeePin<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh ed8484bec</span><br></pre></td></tr></table></figure><br>Debian<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh ed8484bec</span><br></pre></td></tr></table></figure><br>万能脚本<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_panel.sh;else wget -O install_panel.sh https://download.bt.cn/install/install_panel.sh;fi;bash install_panel.sh ed8484bec</span><br></pre></td></tr></table></figure></p><p>国产架构</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install_panel.sh https://download.bt.cn/install/0/loongarch64/loongarch64_install_panel.sh &amp;&amp; bash install_panel.sh ed8484bec</span><br></pre></td></tr></table></figure><h2 id="去登陆"><a href="#去登陆" class="headerlink" title="去登陆"></a>去登陆</h2><p>为什么要这样？只是宝塔从7.8开始就要强制用户登陆账号，总是一种被监视的感觉呵呵。</p><p>详见：<a href="https://blog.laoda.de/archives/bt-to-aapanel">https://blog.laoda.de/archives/bt-to-aapanel</a></p><h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><h2 id="一键安装-卸载（国内）"><a href="#一键安装-卸载（国内）" class="headerlink" title="一键安装/卸载（国内）"></a>一键安装/卸载（国内）</h2><p>安装：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.daocloud.io/docker | sh</span><br></pre></td></tr></table></figure><p>Docker-compose：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://get.daocloud.io/docker/compose/releases/download/v2.1.1/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose &amp;&amp; chmod +x /usr/local/bin/docker-compose &amp;&amp; sudo chmod +x /usr/local/bin/docker-compose &amp;&amp; sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure><p>卸载：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove docker docker-engine &amp;&amp; rm -fr /var/lib/docker/</span><br></pre></td></tr></table></figure><h2 id="一键安装-卸载（海外）"><a href="#一键安装-卸载（海外）" class="headerlink" title="一键安装/卸载（海外）"></a>一键安装/卸载（海外）</h2><p><strong>香港服务器算海外</strong></p><p>安装：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- get.docker.com | bash</span><br></pre></td></tr></table></figure><p>卸载：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get purge docker-ce docker-ce-cli containerd.io &amp;&amp; sudo rm -rf /var/lib/docker &amp;&amp;sudo rm -rf /var/lib/containerd</span><br></pre></td></tr></table></figure><p>Docker-compose：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose &amp;&amp; sudo chmod +x /usr/local/bin/docker-compose &amp;&amp; sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure><h2 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure><p>适用于Docker-compose</p><h1 id="工具箱（推荐！！）"><a href="#工具箱（推荐！！）" class="headerlink" title="工具箱（推荐！！）"></a>工具箱（推荐！！）</h1><p>只是国内需要更改一下链接。</p><p>因为链接是Github，国内被墙[哭]</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O box.sh https://raw.githubusercontent.com/BlueSkyXN/SKY-BOX/main/box.sh &amp;&amp; chmod +x box.sh &amp;&amp; clear &amp;&amp; ./box.sh</span><br></pre></td></tr></table></figure><p>可以的话提供国内链接。</p><h1 id="时间同步"><a href="#时间同步" class="headerlink" title="时间同步"></a>时间同步</h1><p>安装宝塔面板的，可以在软件商店里安装“Linux工具箱”，里面就会有。</p><p>选择：Aisa/Shanghai</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install ntpdate</span><br><span class="line">timedatectl set-timezone Asia/Shanghai</span><br><span class="line">ntpdate ntp1.aliyun.com</span><br></pre></td></tr></table></figure><h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>有其他脚本，欢迎补充！</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 代码 </tag>
-            
-            <tag> 服务器 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>服务器基础知识讲解</title>
       <link href="/posts/1bd.html"/>
       <url>/posts/1bd.html</url>
@@ -188,7 +190,7 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 实用教程 </category>
           
       </categories>
       
@@ -202,19 +204,35 @@
     </entry>
     
     
-  
-  
-    
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>整理服务器常用脚本</title>
+      <link href="/posts/8310.html"/>
+      <url>/posts/8310.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="唠叨"><a href="#唠叨" class="headerlink" title="唠叨"></a>唠叨</h1><p>UP主使用的环境是腾讯云轻量应用服务器：<strong>Ubuntu</strong>系统。</p><p><strong>CentOS系统可能会出现一些问题，请留意！</strong></p><p>部分代码来自<a href="https://blog.laoda.de/">@咕咕鸽</a>，感谢咕咕鸽的提供！</p><h1 id="宝塔面板"><a href="#宝塔面板" class="headerlink" title="宝塔面板"></a>宝塔面板</h1><h2 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h2><p>来自<a href="https://bt.cn">宝塔官网</a></p><p>Centos</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh https://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh ed8484bec</span><br></pre></td></tr></table></figure><p>Ubuntu/DeePin<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh ed8484bec</span><br></pre></td></tr></table></figure><br>Debian<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh ed8484bec</span><br></pre></td></tr></table></figure><br>万能脚本<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_panel.sh;else wget -O install_panel.sh https://download.bt.cn/install/install_panel.sh;fi;bash install_panel.sh ed8484bec</span><br></pre></td></tr></table></figure></p><p>国产架构</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install_panel.sh https://download.bt.cn/install/0/loongarch64/loongarch64_install_panel.sh &amp;&amp; bash install_panel.sh ed8484bec</span><br></pre></td></tr></table></figure><h2 id="去登陆"><a href="#去登陆" class="headerlink" title="去登陆"></a>去登陆</h2><p>为什么要这样？只是宝塔从7.8开始就要强制用户登陆账号，总是一种被监视的感觉呵呵。</p><p>详见：<a href="https://blog.laoda.de/archives/bt-to-aapanel">https://blog.laoda.de/archives/bt-to-aapanel</a></p><h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><h2 id="一键安装-卸载（国内）"><a href="#一键安装-卸载（国内）" class="headerlink" title="一键安装/卸载（国内）"></a>一键安装/卸载（国内）</h2><p>安装：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.daocloud.io/docker | sh</span><br></pre></td></tr></table></figure><p>Docker-compose：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://get.daocloud.io/docker/compose/releases/download/v2.1.1/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose &amp;&amp; chmod +x /usr/local/bin/docker-compose &amp;&amp; sudo chmod +x /usr/local/bin/docker-compose &amp;&amp; sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure><p>卸载：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove docker docker-engine &amp;&amp; rm -fr /var/lib/docker/</span><br></pre></td></tr></table></figure><h2 id="一键安装-卸载（海外）"><a href="#一键安装-卸载（海外）" class="headerlink" title="一键安装/卸载（海外）"></a>一键安装/卸载（海外）</h2><p><strong>香港服务器算海外</strong></p><p>安装：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- get.docker.com | bash</span><br></pre></td></tr></table></figure><p>卸载：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get purge docker-ce docker-ce-cli containerd.io &amp;&amp; sudo rm -rf /var/lib/docker &amp;&amp;sudo rm -rf /var/lib/containerd</span><br></pre></td></tr></table></figure><p>Docker-compose：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose &amp;&amp; sudo chmod +x /usr/local/bin/docker-compose &amp;&amp; sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure><h2 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure><p>适用于Docker-compose</p><h1 id="工具箱（推荐！！）"><a href="#工具箱（推荐！！）" class="headerlink" title="工具箱（推荐！！）"></a>工具箱（推荐！！）</h1><p>只是国内需要更改一下链接。</p><p>因为链接是Github，国内被墙[哭]</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O box.sh https://raw.githubusercontent.com/BlueSkyXN/SKY-BOX/main/box.sh &amp;&amp; chmod +x box.sh &amp;&amp; clear &amp;&amp; ./box.sh</span><br></pre></td></tr></table></figure><p>可以的话提供国内链接。</p><h1 id="时间同步"><a href="#时间同步" class="headerlink" title="时间同步"></a>时间同步</h1><p>安装宝塔面板的，可以在软件商店里安装“Linux工具箱”，里面就会有。</p><p>选择：Aisa/Shanghai</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install ntpdate</span><br><span class="line">timedatectl set-timezone Asia/Shanghai</span><br><span class="line">ntpdate ntp1.aliyun.com</span><br></pre></td></tr></table></figure><h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>有其他脚本，欢迎补充！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实用教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 服务器 </tag>
+            
+            <tag> 代码 </tag>
+            
+        </tags>
       
     </entry>
     
+    
+  
+  
     
     
     <entry>
@@ -229,20 +247,9 @@
     
     
     <entry>
-      <title>🎨相册集</title>
-      <link href="/album/index.html"/>
-      <url>/album/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -262,9 +269,9 @@
     
     
     <entry>
-      <title>电影列表🎞</title>
-      <link href="/collect/index.html"/>
-      <url>/collect/index.html</url>
+      <title>🎨相册集</title>
+      <link href="/album/index.html"/>
+      <url>/album/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -273,9 +280,42 @@
     
     
     <entry>
-      <title>日常生活</title>
-      <link href="/dailyPhoto/index.html"/>
-      <url>/dailyPhoto/index.html</url>
+      <title>协议</title>
+      <link href="/cc/index.html"/>
+      <url>/cc/index.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="版权协议"><a href="#版权协议" class="headerlink" title="版权协议"></a>版权协议</h1><p>为了保持文章质量，并保持互联网的开放共享精神，保持页面流量的稳定，综合考虑下本站的所有原创文章均采用 CC 协议中比较严格的署名-非商业性使用-禁止演绎 4.0 国际标准，即 CC BY-NC-SA 4.0 。这篇文章主要想能够更加清楚明白的介绍本站的协议标准和要求。方便您合理的使用本站的文章。</p><p>违反协议的行为不仅会损害原作者的创作热情，而且会影响整个版权环境。强烈呼吁您能够在转载时遵守协议。遵守协议的行为几乎不会对您的目标产生负面影响，鼓励创作环境是每个创作者的期望。</p><h2 id="你需要遵守什么样的许可？"><a href="#你需要遵守什么样的许可？" class="headerlink" title="你需要遵守什么样的许可？"></a>你需要遵守什么样的许可？</h2><h3 id="署名"><a href="#署名" class="headerlink" title="署名"></a>署名</h3><p>您必须标注内容的来源，您需要在文章开头部分（或者明显位置）标注原文章链接（建议使用超链接提升阅读体验）。</p><h3 id="禁止商用"><a href="#禁止商用" class="headerlink" title="禁止商用"></a>禁止商用</h3><p>本站内容免费向互联网所有用户提供，分享本站文章时禁止商业性使用、禁止在转载页面中插入广告（例如谷歌广告、百度广告）、禁止阅读的拦截行为（例如关注公众号、下载App后观看文章）。</p><h3 id="禁止演绎"><a href="#禁止演绎" class="headerlink" title="禁止演绎"></a>禁止演绎</h3><ul><li>分享全部内容（无修改）: 您需要在文章开头部分（或者明显位置）标注原文章链接（建议使用超链接）</li><li>分享部分截取内容或者衍生创作 : 目前本站全部原创文章的衍生品禁止公开分享和分发。如有更好的修改建议，可以在对应文章下留言。如有衍生创作需求，可以在评论中联系。</li></ul><h2 id="你可以做什么？"><a href="#你可以做什么？" class="headerlink" title="你可以做什么？"></a>你可以做什么？</h2><p>只要您遵守本页的许可，您可以自由地共享文章的内容 — 在任何媒介以任何形式复制、发行本作品。并且无需通知作者。</p><h2 id="什么内容会被版权保护"><a href="#什么内容会被版权保护" class="headerlink" title="什么内容会被版权保护"></a>什么内容会被版权保护</h2><p>包括但不限于：</p><ul><li>文章标题和正文</li><li>站点图片素材（不含主题自带素材）</li></ul><h2 id="例外情况"><a href="#例外情况" class="headerlink" title="例外情况"></a>例外情况</h2><p>本着友好互相进步的原则，被本站友链收录的博客允许博客文章内容的衍生品的分享和分发，但仍需标注出处。</p><p>本着互联网开放精神，您可以在博客文章下方留言要求授权博文的衍生品的分享和分发，标注您的网站地址。</p><p>—此协议来源于网络，请遵守相关规定，若有争议，请离开本站！</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>📺追番页</title>
+      <link href="/bangumis/index.html"/>
+      <url>/bangumis/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>🎬电影列表</title>
+      <link href="/collect/index.html"/>
+      <url>/collect/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -295,11 +335,22 @@
     
     
     <entry>
-      <title>协议</title>
-      <link href="/cc/index.html"/>
-      <url>/cc/index.html</url>
+      <title>日常生活</title>
+      <link href="/dailyPhoto/index.html"/>
+      <url>/dailyPhoto/index.html</url>
       
-        <content type="html"><![CDATA[<h1 id="版权协议"><a href="#版权协议" class="headerlink" title="版权协议"></a>版权协议</h1><p>为了保持文章质量，并保持互联网的开放共享精神，保持页面流量的稳定，综合考虑下本站的所有原创文章均采用 CC 协议中比较严格的署名-非商业性使用-禁止演绎 4.0 国际标准，即 CC BY-NC-SA 4.0 。这篇文章主要想能够更加清楚明白的介绍本站的协议标准和要求。方便您合理的使用本站的文章。</p><p>违反协议的行为不仅会损害原作者的创作热情，而且会影响整个版权环境。强烈呼吁您能够在转载时遵守协议。遵守协议的行为几乎不会对您的目标产生负面影响，鼓励创作环境是每个创作者的期望。</p><h2 id="你需要遵守什么样的许可？"><a href="#你需要遵守什么样的许可？" class="headerlink" title="你需要遵守什么样的许可？"></a>你需要遵守什么样的许可？</h2><h3 id="署名"><a href="#署名" class="headerlink" title="署名"></a>署名</h3><p>您必须标注内容的来源，您需要在文章开头部分（或者明显位置）标注原文章链接（建议使用超链接提升阅读体验）。</p><h3 id="禁止商用"><a href="#禁止商用" class="headerlink" title="禁止商用"></a>禁止商用</h3><p>本站内容免费向互联网所有用户提供，分享本站文章时禁止商业性使用、禁止在转载页面中插入广告（例如谷歌广告、百度广告）、禁止阅读的拦截行为（例如关注公众号、下载App后观看文章）。</p><h3 id="禁止演绎"><a href="#禁止演绎" class="headerlink" title="禁止演绎"></a>禁止演绎</h3><ul><li>分享全部内容（无修改）: 您需要在文章开头部分（或者明显位置）标注原文章链接（建议使用超链接）</li><li>分享部分截取内容或者衍生创作 : 目前本站全部原创文章的衍生品禁止公开分享和分发。如有更好的修改建议，可以在对应文章下留言。如有衍生创作需求，可以在评论中联系。</li></ul><h2 id="你可以做什么？"><a href="#你可以做什么？" class="headerlink" title="你可以做什么？"></a>你可以做什么？</h2><p>只要您遵守本页的许可，您可以自由地共享文章的内容 — 在任何媒介以任何形式复制、发行本作品。并且无需通知作者。</p><h2 id="什么内容会被版权保护"><a href="#什么内容会被版权保护" class="headerlink" title="什么内容会被版权保护"></a>什么内容会被版权保护</h2><p>包括但不限于：</p><ul><li>文章标题和正文</li><li>站点图片素材（不含主题自带素材）</li></ul><h2 id="例外情况"><a href="#例外情况" class="headerlink" title="例外情况"></a>例外情况</h2><p>本着友好互相进步的原则，被本站友链收录的博客允许博客文章内容的衍生品的分享和分发，但仍需标注出处。</p><p>本着互联网开放精神，您可以在博客文章下方留言要求授权博文的衍生品的分享和分发，标注您的网站地址。</p><p>—此协议来源于网络，请遵守相关规定，若有争议，请离开本站！</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>朋友圈</title>
+      <link href="/fcircle/index.html"/>
+      <url>/fcircle/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -328,9 +379,9 @@
     
     
     <entry>
-      <title>未来憧憬</title>
-      <link href="/futurephoto/index.html"/>
-      <url>/futurephoto/index.html</url>
+      <title>忆寻时光</title>
+      <link href="/huiyiphoto/index.html"/>
+      <url>/huiyiphoto/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -339,9 +390,9 @@
     
     
     <entry>
-      <title>朋友圈</title>
-      <link href="/fcircle/index.html"/>
-      <url>/fcircle/index.html</url>
+      <title>未来憧憬</title>
+      <link href="/futurephoto/index.html"/>
+      <url>/futurephoto/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -361,11 +412,22 @@
     
     
     <entry>
-      <title>忆寻时光</title>
-      <link href="/huiyiphoto/index.html"/>
-      <url>/huiyiphoto/index.html</url>
+      <title></title>
+      <link href="/json/music.json"/>
+      <url>/json/music.json</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[[{"name":"青花瓷","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/青花瓷/青花瓷.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002eFUFm2XYZ7z_2.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/青花瓷/青花瓷.lrc"},{"name":"稻香","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/稻香/稻香.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/稻香/稻香.lrc"},{"name":"晴天","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/晴天/晴天.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000MkMni19ClKG_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/晴天/晴天.lrc"},{"name":"七里香","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/七里香/七里香.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003DFRzD192KKD_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/七里香/七里香.lrc"},{"name":"花海","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/花海/花海.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/花海/花海.lrc"},{"name":"反方向的钟","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/反方向的钟/反方向的钟.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000f01724fd7TH_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/反方向的钟/反方向的钟.lrc"},{"name":"兰亭序","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/兰亭序/兰亭序.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/兰亭序/兰亭序.lrc"},{"name":"说好的辛福呢","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/说好的辛福呢/说好的辛福呢.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/说好的辛福呢/说好的幸福呢.lrc"},{"name":"等你下课 (with 杨瑞代)","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/等你下课/等你下课.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003bSL0v4bpKAx_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/等你下课/等你下课.lrc"},{"name":"我落泪情绪零碎","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/我落泪情绪零碎/我落泪情绪零碎.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000bviBl4FjTpO_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/我落泪情绪零碎/我落泪情绪零碎.lrc"},{"name":"听妈妈的话","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/听妈妈的话/听妈妈的话.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002jLGWe16Tf1H_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/听妈妈的话/听妈妈的话.lrc"},{"name":"明明就","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/明明就/明明就.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003Ow85E3pnoqi_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/明明就/明明就.lrc"},{"name":"我是如此相信","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/我是如此相信/我是如此相信.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000001hGx1Z0so1YX_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/我是如此相信/我是如此相信.lrc"},{"name":"发如雪","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/发如雪/发如雪.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M0000024bjiL2aocxT_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/发如雪/发如雪.lrc"},{"name":"以父之名","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/以父之名/以父之名.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000MkMni19ClKG_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/以父之名/以父之名.lrc"},{"name":"园游会","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/园游会/园游会.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003DFRzD192KKD_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/园游会/园游会.lrc"},{"name":"本草纲目","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/本草纲目/本草纲目.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002jLGWe16Tf1H_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/本草纲目/本草纲目.lrc"},{"name":"龙卷风","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/龙卷风/龙卷风.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000f01724fd7TH_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/龙卷风/龙卷风.lrc"}]]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>隐私协议</title>
+      <link href="/privacy/index.html"/>
+      <url>/privacy/index.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="隐私协议"><a href="#隐私协议" class="headerlink" title="隐私协议"></a>隐私协议</h1><p>本站非常重视用户的隐私和个人信息保护。您在使用网站时，可能会收集和使用您的相关信息。通过《隐私政策》向您说明在您访问 hylove.top 网站时，如何收集、使用、保存、共享和转让这些信息。</p><h2 id="一、如何收集和使用您的个人信息"><a href="#一、如何收集和使用您的个人信息" class="headerlink" title="一、如何收集和使用您的个人信息"></a>一、如何收集和使用您的个人信息</h2><p>网络身份标识信息（浏览器UA、IP地址）、您的地理位置信息（具体到城市）、电子邮件地址。<br>在您访问时，仅会处于以下目的，使用您的个人信息：</p><ul><li>百度/谷歌统计工具会收集您的访问信息，用于网站的优化与文章分类、恶意访问识别（被动，存储，系统定期清理）<br>您应该知道在您访问的时候以下信息会被统计功能使用：</li><li>IP地址</li><li>所在区域</li><li>设备</li></ul><p>在您评论时，仅会出于以下目的，收集和使用您的个人信息：<br>评论使用的是无登陆系统的匿名评论系统，您可以填写真实的、虚假的信息作为您评论的展示信息。鼓励您使用不易被人恶意识别的昵称进行评论，但是建议您填写真实的邮箱以便收到回复。</p><ul><li>评论时会记录您的qq号（如果在邮箱位置填写qq邮箱或qq号），方便获取您的qq头像。如果使用QQ邮箱但不想展示QQ头像，可以填写不含QQ号的QQ邮箱。（主动，存储）</li><li>评论时会记录您的邮箱，当我回复后会通过邮件通知您（主动，存储，不会公开邮箱）</li><li>评论时会记录您的IP地址，作为反垃圾的用户判别依据（被动，存储，不会公开IP）</li><li>评论会记录您的浏览器代理，用作展示系统版本、浏览器版本方便展示您使用的设备，快速定位问题（被动，存储）</li></ul><h2 id="二、如何使用-Cookies-和本地-LocalStorage-存储"><a href="#二、如何使用-Cookies-和本地-LocalStorage-存储" class="headerlink" title="二、如何使用 Cookies 和本地 LocalStorage 存储"></a>二、如何使用 Cookies 和本地 LocalStorage 存储</h2><p>本站为实现无账号评论、深色模式切换，不蒜子的uv统计等功能，会在您的浏览器中进行本地存储，您可以随时清除浏览器中保存的所有 Cookies 以及 LocalStorage。<br>关于如何使用您的Cookies，<a href="https://hylove.top/cookies/">请访问Cookies政策</a>。<br>关于如何在<a href="https://support.google.com/chrome/answer/95647?co=GENIE.Platform=Desktop&amp;hl=zh-Hans">Chrome中清除、启用和管理 Cookie</a>。</p><h2 id="三、如何共享、转让您的个人信息"><a href="#三、如何共享、转让您的个人信息" class="headerlink" title="三、如何共享、转让您的个人信息"></a>三、如何共享、转让您的个人信息</h2><p>不会与任何公司、组织和个人共享您的个人信息<br>不会将您的个人信息转让给任何公司、组织和个人</p>]]></content>
       
     </entry>
     
@@ -377,17 +439,6 @@
       <url>/link/index.html</url>
       
         <content type="html"><![CDATA[<h1 id="如何添加？"><a href="#如何添加？" class="headerlink" title="如何添加？"></a>如何添加？</h1><p>符合以下要求：</p><ol><li>网站强制HTTPS</li><li>类型为个人博客</li><li>不适用公用域名（如xx.github.io, xx.js.org）</li><li>将我的网站加入友情链接中</li><li>可选：备案</li></ol><p>在评论区填写以下内容：</p><ol><li>站点名称</li><li>站点链接</li><li>站长头像</li><li>站点描述</li><li>站点截图 </li></ol><p>图片推荐使用128x128</p><p>站点截图可选</p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/json/music.json"/>
-      <url>/json/music.json</url>
-      
-        <content type="html"><![CDATA[[{"name":"青花瓷","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/青花瓷/青花瓷.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002eFUFm2XYZ7z_2.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/青花瓷/青花瓷.lrc"},{"name":"稻香","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/稻香/稻香.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/稻香/稻香.lrc"},{"name":"晴天","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/晴天/晴天.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000MkMni19ClKG_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/晴天/晴天.lrc"},{"name":"七里香","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/七里香/七里香.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003DFRzD192KKD_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/七里香/七里香.lrc"},{"name":"花海","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/花海/花海.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/花海/花海.lrc"},{"name":"反方向的钟","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/反方向的钟/反方向的钟.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000f01724fd7TH_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/反方向的钟/反方向的钟.lrc"},{"name":"兰亭序","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/兰亭序/兰亭序.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/兰亭序/兰亭序.lrc"},{"name":"说好的辛福呢","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/说好的辛福呢/说好的辛福呢.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/说好的辛福呢/说好的幸福呢.lrc"},{"name":"等你下课 (with 杨瑞代)","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/等你下课/等你下课.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003bSL0v4bpKAx_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/等你下课/等你下课.lrc"},{"name":"我落泪情绪零碎","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/我落泪情绪零碎/我落泪情绪零碎.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000bviBl4FjTpO_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/我落泪情绪零碎/我落泪情绪零碎.lrc"},{"name":"听妈妈的话","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/听妈妈的话/听妈妈的话.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002jLGWe16Tf1H_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/听妈妈的话/听妈妈的话.lrc"},{"name":"明明就","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/明明就/明明就.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003Ow85E3pnoqi_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/明明就/明明就.lrc"},{"name":"我是如此相信","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/我是如此相信/我是如此相信.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000001hGx1Z0so1YX_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/我是如此相信/我是如此相信.lrc"},{"name":"发如雪","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/发如雪/发如雪.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M0000024bjiL2aocxT_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/发如雪/发如雪.lrc"},{"name":"以父之名","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/以父之名/以父之名.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000MkMni19ClKG_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/以父之名/以父之名.lrc"},{"name":"园游会","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/园游会/园游会.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003DFRzD192KKD_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/园游会/园游会.lrc"},{"name":"本草纲目","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/本草纲目/本草纲目.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002jLGWe16Tf1H_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/本草纲目/本草纲目.lrc"},{"name":"龙卷风","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/龙卷风/龙卷风.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000f01724fd7TH_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/龙卷风/龙卷风.lrc"}]]]></content>
       
     </entry>
     
@@ -416,11 +467,11 @@
     
     
     <entry>
-      <title>隐私协议</title>
-      <link href="/privacy/index.html"/>
-      <url>/privacy/index.html</url>
+      <title>世界各地风景</title>
+      <link href="/wordScenery/index.html"/>
+      <url>/wordScenery/index.html</url>
       
-        <content type="html"><![CDATA[<h1 id="隐私协议"><a href="#隐私协议" class="headerlink" title="隐私协议"></a>隐私协议</h1><p>本站非常重视用户的隐私和个人信息保护。您在使用网站时，可能会收集和使用您的相关信息。通过《隐私政策》向您说明在您访问 hylove.top 网站时，如何收集、使用、保存、共享和转让这些信息。</p><h2 id="一、如何收集和使用您的个人信息"><a href="#一、如何收集和使用您的个人信息" class="headerlink" title="一、如何收集和使用您的个人信息"></a>一、如何收集和使用您的个人信息</h2><p>网络身份标识信息（浏览器UA、IP地址）、您的地理位置信息（具体到城市）、电子邮件地址。<br>在您访问时，仅会处于以下目的，使用您的个人信息：</p><ul><li>百度/谷歌统计工具会收集您的访问信息，用于网站的优化与文章分类、恶意访问识别（被动，存储，系统定期清理）<br>您应该知道在您访问的时候以下信息会被统计功能使用：</li><li>IP地址</li><li>所在区域</li><li>设备</li></ul><p>在您评论时，仅会出于以下目的，收集和使用您的个人信息：<br>评论使用的是无登陆系统的匿名评论系统，您可以填写真实的、虚假的信息作为您评论的展示信息。鼓励您使用不易被人恶意识别的昵称进行评论，但是建议您填写真实的邮箱以便收到回复。</p><ul><li>评论时会记录您的qq号（如果在邮箱位置填写qq邮箱或qq号），方便获取您的qq头像。如果使用QQ邮箱但不想展示QQ头像，可以填写不含QQ号的QQ邮箱。（主动，存储）</li><li>评论时会记录您的邮箱，当我回复后会通过邮件通知您（主动，存储，不会公开邮箱）</li><li>评论时会记录您的IP地址，作为反垃圾的用户判别依据（被动，存储，不会公开IP）</li><li>评论会记录您的浏览器代理，用作展示系统版本、浏览器版本方便展示您使用的设备，快速定位问题（被动，存储）</li></ul><h2 id="二、如何使用-Cookies-和本地-LocalStorage-存储"><a href="#二、如何使用-Cookies-和本地-LocalStorage-存储" class="headerlink" title="二、如何使用 Cookies 和本地 LocalStorage 存储"></a>二、如何使用 Cookies 和本地 LocalStorage 存储</h2><p>本站为实现无账号评论、深色模式切换，不蒜子的uv统计等功能，会在您的浏览器中进行本地存储，您可以随时清除浏览器中保存的所有 Cookies 以及 LocalStorage。<br>关于如何使用您的Cookies，<a href="https://hylove.top/cookies/">请访问Cookies政策</a>。<br>关于如何在<a href="https://support.google.com/chrome/answer/95647?co=GENIE.Platform=Desktop&amp;hl=zh-Hans">Chrome中清除、启用和管理 Cookie</a>。</p><h2 id="三、如何共享、转让您的个人信息"><a href="#三、如何共享、转让您的个人信息" class="headerlink" title="三、如何共享、转让您的个人信息"></a>三、如何共享、转让您的个人信息</h2><p>不会与任何公司、组织和个人共享您的个人信息<br>不会将您的个人信息转让给任何公司、组织和个人</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -443,17 +494,6 @@
       <url>/wechat/index.html</url>
       
         <content type="html"><![CDATA[<h1 id="订阅本站"><a href="#订阅本站" class="headerlink" title="订阅本站"></a>订阅本站</h1><p>首先感谢你对本站的文章产生一些兴趣，本站的主要内容风格为电脑资源分享、电脑骚操作，如果你对这方面内容感兴趣，欢迎关注。</p><h1 id="全部文章订阅方式"><a href="#全部文章订阅方式" class="headerlink" title="全部文章订阅方式"></a>全部文章订阅方式</h1><h2 id="RSS"><a href="#RSS" class="headerlink" title="RSS"></a>RSS</h2><p>你可以使用第三方RSS阅读器阅读：</p><blockquote><p><a href="https://www.hylove.top/atom.xml">https://www.hylove.top/atom.xml</a></p></blockquote>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>世界各地风景</title>
-      <link href="/wordScenery/index.html"/>
-      <url>/wordScenery/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
