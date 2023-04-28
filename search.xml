@@ -181,6 +181,33 @@
     
     
     <entry>
+      <title>整理服务器常用脚本</title>
+      <link href="/posts/8310.html"/>
+      <url>/posts/8310.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="唠叨"><a href="#唠叨" class="headerlink" title="唠叨"></a>唠叨</h1><p>UP主使用的环境是腾讯云轻量应用服务器：<strong>Ubuntu</strong>系统。</p><p><strong>CentOS系统可能会出现一些问题，请留意！</strong></p><p>部分代码来自<a href="https://blog.laoda.de/">@咕咕鸽</a>，感谢咕咕鸽的提供！</p><h1 id="宝塔面板"><a href="#宝塔面板" class="headerlink" title="宝塔面板"></a>宝塔面板</h1><h2 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h2><p>来自<a href="https://bt.cn">宝塔官网</a></p><p>Centos</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh https://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh ed8484bec</span><br></pre></td></tr></table></figure><p>Ubuntu/DeePin<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh ed8484bec</span><br></pre></td></tr></table></figure><br>Debian<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh ed8484bec</span><br></pre></td></tr></table></figure><br>万能脚本<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_panel.sh;else wget -O install_panel.sh https://download.bt.cn/install/install_panel.sh;fi;bash install_panel.sh ed8484bec</span><br></pre></td></tr></table></figure></p><p>国产架构</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install_panel.sh https://download.bt.cn/install/0/loongarch64/loongarch64_install_panel.sh &amp;&amp; bash install_panel.sh ed8484bec</span><br></pre></td></tr></table></figure><h2 id="去登陆"><a href="#去登陆" class="headerlink" title="去登陆"></a>去登陆</h2><p>为什么要这样？只是宝塔从7.8开始就要强制用户登陆账号，总是一种被监视的感觉呵呵。</p><p>详见：<a href="https://blog.laoda.de/archives/bt-to-aapanel">https://blog.laoda.de/archives/bt-to-aapanel</a></p><h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><h2 id="一键安装-卸载（国内）"><a href="#一键安装-卸载（国内）" class="headerlink" title="一键安装/卸载（国内）"></a>一键安装/卸载（国内）</h2><p>安装：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.daocloud.io/docker | sh</span><br></pre></td></tr></table></figure><p>Docker-compose：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://get.daocloud.io/docker/compose/releases/download/v2.1.1/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose &amp;&amp; chmod +x /usr/local/bin/docker-compose &amp;&amp; sudo chmod +x /usr/local/bin/docker-compose &amp;&amp; sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure><p>卸载：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove docker docker-engine &amp;&amp; rm -fr /var/lib/docker/</span><br></pre></td></tr></table></figure><h2 id="一键安装-卸载（海外）"><a href="#一键安装-卸载（海外）" class="headerlink" title="一键安装/卸载（海外）"></a>一键安装/卸载（海外）</h2><p><strong>香港服务器算海外</strong></p><p>安装：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- get.docker.com | bash</span><br></pre></td></tr></table></figure><p>卸载：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get purge docker-ce docker-ce-cli containerd.io &amp;&amp; sudo rm -rf /var/lib/docker &amp;&amp;sudo rm -rf /var/lib/containerd</span><br></pre></td></tr></table></figure><p>Docker-compose：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose &amp;&amp; sudo chmod +x /usr/local/bin/docker-compose &amp;&amp; sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure><h2 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure><p>适用于Docker-compose</p><h1 id="工具箱（推荐！！）"><a href="#工具箱（推荐！！）" class="headerlink" title="工具箱（推荐！！）"></a>工具箱（推荐！！）</h1><p>只是国内需要更改一下链接。</p><p>因为链接是Github，国内被墙[哭]</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O box.sh https://raw.githubusercontent.com/BlueSkyXN/SKY-BOX/main/box.sh &amp;&amp; chmod +x box.sh &amp;&amp; clear &amp;&amp; ./box.sh</span><br></pre></td></tr></table></figure><p>可以的话提供国内链接。</p><h1 id="时间同步"><a href="#时间同步" class="headerlink" title="时间同步"></a>时间同步</h1><p>安装宝塔面板的，可以在软件商店里安装“Linux工具箱”，里面就会有。</p><p>选择：Aisa/Shanghai</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install ntpdate</span><br><span class="line">timedatectl set-timezone Asia/Shanghai</span><br><span class="line">ntpdate ntp1.aliyun.com</span><br></pre></td></tr></table></figure><h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>有其他脚本，欢迎补充！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实用教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 代码 </tag>
+            
+            <tag> 服务器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>服务器基础知识讲解</title>
       <link href="/posts/1bd.html"/>
       <url>/posts/1bd.html</url>
@@ -198,33 +225,6 @@
         <tags>
             
             <tag> 服务器 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>整理服务器常用脚本</title>
-      <link href="/posts/8310.html"/>
-      <url>/posts/8310.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="唠叨"><a href="#唠叨" class="headerlink" title="唠叨"></a>唠叨</h1><p>UP主使用的环境是腾讯云轻量应用服务器：<strong>Ubuntu</strong>系统。</p><p><strong>CentOS系统可能会出现一些问题，请留意！</strong></p><p>部分代码来自<a href="https://blog.laoda.de/">@咕咕鸽</a>，感谢咕咕鸽的提供！</p><h1 id="宝塔面板"><a href="#宝塔面板" class="headerlink" title="宝塔面板"></a>宝塔面板</h1><h2 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h2><p>来自<a href="https://bt.cn">宝塔官网</a></p><p>Centos</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh https://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh ed8484bec</span><br></pre></td></tr></table></figure><p>Ubuntu/DeePin<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh ed8484bec</span><br></pre></td></tr></table></figure><br>Debian<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh ed8484bec</span><br></pre></td></tr></table></figure><br>万能脚本<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_panel.sh;else wget -O install_panel.sh https://download.bt.cn/install/install_panel.sh;fi;bash install_panel.sh ed8484bec</span><br></pre></td></tr></table></figure></p><p>国产架构</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install_panel.sh https://download.bt.cn/install/0/loongarch64/loongarch64_install_panel.sh &amp;&amp; bash install_panel.sh ed8484bec</span><br></pre></td></tr></table></figure><h2 id="去登陆"><a href="#去登陆" class="headerlink" title="去登陆"></a>去登陆</h2><p>为什么要这样？只是宝塔从7.8开始就要强制用户登陆账号，总是一种被监视的感觉呵呵。</p><p>详见：<a href="https://blog.laoda.de/archives/bt-to-aapanel">https://blog.laoda.de/archives/bt-to-aapanel</a></p><h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><h2 id="一键安装-卸载（国内）"><a href="#一键安装-卸载（国内）" class="headerlink" title="一键安装/卸载（国内）"></a>一键安装/卸载（国内）</h2><p>安装：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.daocloud.io/docker | sh</span><br></pre></td></tr></table></figure><p>Docker-compose：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://get.daocloud.io/docker/compose/releases/download/v2.1.1/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose &amp;&amp; chmod +x /usr/local/bin/docker-compose &amp;&amp; sudo chmod +x /usr/local/bin/docker-compose &amp;&amp; sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure><p>卸载：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove docker docker-engine &amp;&amp; rm -fr /var/lib/docker/</span><br></pre></td></tr></table></figure><h2 id="一键安装-卸载（海外）"><a href="#一键安装-卸载（海外）" class="headerlink" title="一键安装/卸载（海外）"></a>一键安装/卸载（海外）</h2><p><strong>香港服务器算海外</strong></p><p>安装：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- get.docker.com | bash</span><br></pre></td></tr></table></figure><p>卸载：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get purge docker-ce docker-ce-cli containerd.io &amp;&amp; sudo rm -rf /var/lib/docker &amp;&amp;sudo rm -rf /var/lib/containerd</span><br></pre></td></tr></table></figure><p>Docker-compose：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose &amp;&amp; sudo chmod +x /usr/local/bin/docker-compose &amp;&amp; sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure><h2 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure><p>适用于Docker-compose</p><h1 id="工具箱（推荐！！）"><a href="#工具箱（推荐！！）" class="headerlink" title="工具箱（推荐！！）"></a>工具箱（推荐！！）</h1><p>只是国内需要更改一下链接。</p><p>因为链接是Github，国内被墙[哭]</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O box.sh https://raw.githubusercontent.com/BlueSkyXN/SKY-BOX/main/box.sh &amp;&amp; chmod +x box.sh &amp;&amp; clear &amp;&amp; ./box.sh</span><br></pre></td></tr></table></figure><p>可以的话提供国内链接。</p><h1 id="时间同步"><a href="#时间同步" class="headerlink" title="时间同步"></a>时间同步</h1><p>安装宝塔面板的，可以在软件商店里安装“Linux工具箱”，里面就会有。</p><p>选择：Aisa/Shanghai</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install ntpdate</span><br><span class="line">timedatectl set-timezone Asia/Shanghai</span><br><span class="line">ntpdate ntp1.aliyun.com</span><br></pre></td></tr></table></figure><h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>有其他脚本，欢迎补充！</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 实用教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 服务器 </tag>
-            
-            <tag> 代码 </tag>
             
         </tags>
       
@@ -258,9 +258,9 @@
     
     
     <entry>
-      <title>隧道</title>
-      <link href="/archives/index.html"/>
-      <url>/archives/index.html</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -280,33 +280,22 @@
     
     
     <entry>
+      <title>隧道</title>
+      <link href="/archives/index.html"/>
+      <url>/archives/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>协议</title>
       <link href="/cc/index.html"/>
       <url>/cc/index.html</url>
       
         <content type="html"><![CDATA[<h1 id="版权协议"><a href="#版权协议" class="headerlink" title="版权协议"></a>版权协议</h1><p>为了保持文章质量，并保持互联网的开放共享精神，保持页面流量的稳定，综合考虑下本站的所有原创文章均采用 CC 协议中比较严格的署名-非商业性使用-禁止演绎 4.0 国际标准，即 CC BY-NC-SA 4.0 。这篇文章主要想能够更加清楚明白的介绍本站的协议标准和要求。方便您合理的使用本站的文章。</p><p>违反协议的行为不仅会损害原作者的创作热情，而且会影响整个版权环境。强烈呼吁您能够在转载时遵守协议。遵守协议的行为几乎不会对您的目标产生负面影响，鼓励创作环境是每个创作者的期望。</p><h2 id="你需要遵守什么样的许可？"><a href="#你需要遵守什么样的许可？" class="headerlink" title="你需要遵守什么样的许可？"></a>你需要遵守什么样的许可？</h2><h3 id="署名"><a href="#署名" class="headerlink" title="署名"></a>署名</h3><p>您必须标注内容的来源，您需要在文章开头部分（或者明显位置）标注原文章链接（建议使用超链接提升阅读体验）。</p><h3 id="禁止商用"><a href="#禁止商用" class="headerlink" title="禁止商用"></a>禁止商用</h3><p>本站内容免费向互联网所有用户提供，分享本站文章时禁止商业性使用、禁止在转载页面中插入广告（例如谷歌广告、百度广告）、禁止阅读的拦截行为（例如关注公众号、下载App后观看文章）。</p><h3 id="禁止演绎"><a href="#禁止演绎" class="headerlink" title="禁止演绎"></a>禁止演绎</h3><ul><li>分享全部内容（无修改）: 您需要在文章开头部分（或者明显位置）标注原文章链接（建议使用超链接）</li><li>分享部分截取内容或者衍生创作 : 目前本站全部原创文章的衍生品禁止公开分享和分发。如有更好的修改建议，可以在对应文章下留言。如有衍生创作需求，可以在评论中联系。</li></ul><h2 id="你可以做什么？"><a href="#你可以做什么？" class="headerlink" title="你可以做什么？"></a>你可以做什么？</h2><p>只要您遵守本页的许可，您可以自由地共享文章的内容 — 在任何媒介以任何形式复制、发行本作品。并且无需通知作者。</p><h2 id="什么内容会被版权保护"><a href="#什么内容会被版权保护" class="headerlink" title="什么内容会被版权保护"></a>什么内容会被版权保护</h2><p>包括但不限于：</p><ul><li>文章标题和正文</li><li>站点图片素材（不含主题自带素材）</li></ul><h2 id="例外情况"><a href="#例外情况" class="headerlink" title="例外情况"></a>例外情况</h2><p>本着友好互相进步的原则，被本站友链收录的博客允许博客文章内容的衍生品的分享和分发，但仍需标注出处。</p><p>本着互联网开放精神，您可以在博客文章下方留言要求授权博文的衍生品的分享和分发，标注您的网站地址。</p><p>—此协议来源于网络，请遵守相关规定，若有争议，请离开本站！</p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>📺追番页</title>
-      <link href="/bangumis/index.html"/>
-      <url>/bangumis/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -324,33 +313,22 @@
     
     
     <entry>
+      <title>📺追番页</title>
+      <link href="/bangumis/index.html"/>
+      <url>/bangumis/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/css/custom.css"/>
       <url>/css/custom.css</url>
       
         <content type="html"><![CDATA[#article-container figure.highlight .highlight-tools {  background: #eceef2;  border-bottom: #e3e8f7;  color: #363636;}body {  cursor: url(https://blog.shineyu.cn/img/x1.cur  ),auto}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),a,button:not(:disabled) {  cursor: url(https://blog.shineyu.cn/img/x2.cur),auto!important}#article-container .highlight-tools {  position: relative;  display: flex;  -webkit-box-align: center;  align-items: center;  overflow: hidden;  min-height: 1.2rem;  height: 2.15em;  background: #1c1c1c;  color: rgba(238, 255, 255, 0.8);  font-size: 16px;}.line{  color: #1c1c1c;}[data-theme=dark] #article-container figure.highlight .highlight-tools {  background: #30343f;  border-bottom: #3d3d3f;  color: #F7F7FA;}[data-theme=dark] #article-container .highlight-tools {  position: relative;  display: flex;  -webkit-box-align: center;  align-items: center;  overflow: hidden;  min-height: 1.2rem;  height: 2.15em;  background: #1c1c1c;  color: #90a4ae;  font-size: 16px;}[data-theme=dark] .line{  color: #f8faff;}/* 欢迎信息 */#welcome-info {  background: linear-gradient(45deg, #b9f4f3, #e3fbf9);  border-radius: 18px;  padding: 8px;}[data-theme="dark"] #welcome-info {  background: #212121;}/*哔哩哔哩视频适配*/.aspect-ratio {  position: relative;  width: 90%;  height: auto;  padding-bottom: 75%;  margin: 3% auto;  text-align: center;}.aspect-ratio iframe {  position: absolute;  width: 100%;  height: 86%;  left: 0;  top: 0;}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>日常生活</title>
-      <link href="/dailyPhoto/index.html"/>
-      <url>/dailyPhoto/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>朋友圈</title>
-      <link href="/fcircle/index.html"/>
-      <url>/fcircle/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -379,9 +357,9 @@
     
     
     <entry>
-      <title>忆寻时光</title>
-      <link href="/huiyiphoto/index.html"/>
-      <url>/huiyiphoto/index.html</url>
+      <title>朋友圈</title>
+      <link href="/fcircle/index.html"/>
+      <url>/fcircle/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -390,9 +368,9 @@
     
     
     <entry>
-      <title>未来憧憬</title>
-      <link href="/futurephoto/index.html"/>
-      <url>/futurephoto/index.html</url>
+      <title>日常生活</title>
+      <link href="/dailyPhoto/index.html"/>
+      <url>/dailyPhoto/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -404,6 +382,17 @@
       <title>🕹️ 电玩城</title>
       <link href="/game/index.html"/>
       <url>/game/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>未来憧憬</title>
+      <link href="/futurephoto/index.html"/>
+      <url>/futurephoto/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -456,6 +445,28 @@
     
     
     <entry>
+      <title>忆寻时光</title>
+      <link href="/huiyiphoto/index.html"/>
+      <url>/huiyiphoto/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>📺 放映厅</title>
       <link href="/video/index.html"/>
       <url>/video/index.html</url>
@@ -470,17 +481,6 @@
       <title>世界各地风景</title>
       <link href="/wordScenery/index.html"/>
       <url>/wordScenery/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
