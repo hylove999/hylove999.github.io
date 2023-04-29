@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Hello World</title>
+      <link href="/posts/3eeb.html"/>
+      <url>/posts/3eeb.html</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活日常 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>阿里云盘自动签到教程</title>
       <link href="/posts/b2ef.html"/>
       <url>/posts/b2ef.html</url>
@@ -54,25 +73,6 @@
             <tag> 解决方案 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/posts/3eeb.html"/>
-      <url>/posts/3eeb.html</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 生活日常 </category>
-          
-      </categories>
-      
       
     </entry>
     
@@ -269,9 +269,42 @@
     
     
     <entry>
+      <title>🎨相册集</title>
+      <link href="/album/index.html"/>
+      <url>/album/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>📺追番页</title>
+      <link href="/bangumis/index.html"/>
+      <url>/bangumis/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>分类</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>🎬电影列表</title>
+      <link href="/collect/index.html"/>
+      <url>/collect/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -302,44 +335,11 @@
     
     
     <entry>
-      <title>🎬电影列表</title>
-      <link href="/collect/index.html"/>
-      <url>/collect/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title></title>
       <link href="/css/custom.css"/>
       <url>/css/custom.css</url>
       
         <content type="html"><![CDATA[#article-container figure.highlight .highlight-tools {  background: #eceef2;  border-bottom: #e3e8f7;  color: #363636;}body {  cursor: url(https://blog.shineyu.cn/img/x1.cur  ),auto}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),a,button:not(:disabled) {  cursor: url(https://blog.shineyu.cn/img/x2.cur),auto!important}#article-container .highlight-tools {  position: relative;  display: flex;  -webkit-box-align: center;  align-items: center;  overflow: hidden;  min-height: 1.2rem;  height: 2.15em;  background: #1c1c1c;  color: rgba(238, 255, 255, 0.8);  font-size: 16px;}.line{  color: #1c1c1c;}[data-theme=dark] #article-container figure.highlight .highlight-tools {  background: #30343f;  border-bottom: #3d3d3f;  color: #F7F7FA;}[data-theme=dark] #article-container .highlight-tools {  position: relative;  display: flex;  -webkit-box-align: center;  align-items: center;  overflow: hidden;  min-height: 1.2rem;  height: 2.15em;  background: #1c1c1c;  color: #90a4ae;  font-size: 16px;}[data-theme=dark] .line{  color: #f8faff;}/* 欢迎信息 */#welcome-info {  background: linear-gradient(45deg, #b9f4f3, #e3fbf9);  border-radius: 18px;  padding: 8px;}[data-theme="dark"] #welcome-info {  background: #212121;}/*哔哩哔哩视频适配*/.aspect-ratio {  position: relative;  width: 90%;  height: auto;  padding-bottom: 75%;  margin: 3% auto;  text-align: center;}.aspect-ratio iframe {  position: absolute;  width: 100%;  height: 86%;  left: 0;  top: 0;}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>日常生活</title>
-      <link href="/dailyPhoto/index.html"/>
-      <url>/dailyPhoto/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>朋友圈</title>
-      <link href="/fcircle/index.html"/>
-      <url>/fcircle/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -368,6 +368,28 @@
     
     
     <entry>
+      <title>日常生活</title>
+      <link href="/dailyPhoto/index.html"/>
+      <url>/dailyPhoto/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>朋友圈</title>
+      <link href="/fcircle/index.html"/>
+      <url>/fcircle/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>忆寻时光</title>
       <link href="/huiyiphoto/index.html"/>
       <url>/huiyiphoto/index.html</url>
@@ -379,9 +401,9 @@
     
     
     <entry>
-      <title>🎨相册集</title>
-      <link href="/album/index.html"/>
-      <url>/album/index.html</url>
+      <title>🕹️ 电玩城</title>
+      <link href="/game/index.html"/>
+      <url>/game/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -401,9 +423,9 @@
     
     
     <entry>
-      <title>📺追番页</title>
-      <link href="/bangumis/index.html"/>
-      <url>/bangumis/index.html</url>
+      <title>🎵音乐馆</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -417,6 +439,17 @@
       <url>/privacy/index.html</url>
       
         <content type="html"><![CDATA[<h1 id="隐私协议"><a href="#隐私协议" class="headerlink" title="隐私协议"></a>隐私协议</h1><p>本站非常重视用户的隐私和个人信息保护。您在使用网站时，可能会收集和使用您的相关信息。通过《隐私政策》向您说明在您访问 hylove.top 网站时，如何收集、使用、保存、共享和转让这些信息。</p><h2 id="一、如何收集和使用您的个人信息"><a href="#一、如何收集和使用您的个人信息" class="headerlink" title="一、如何收集和使用您的个人信息"></a>一、如何收集和使用您的个人信息</h2><p>网络身份标识信息（浏览器UA、IP地址）、您的地理位置信息（具体到城市）、电子邮件地址。<br>在您访问时，仅会处于以下目的，使用您的个人信息：</p><ul><li>百度/谷歌统计工具会收集您的访问信息，用于网站的优化与文章分类、恶意访问识别（被动，存储，系统定期清理）<br>您应该知道在您访问的时候以下信息会被统计功能使用：</li><li>IP地址</li><li>所在区域</li><li>设备</li></ul><p>在您评论时，仅会出于以下目的，收集和使用您的个人信息：<br>评论使用的是无登陆系统的匿名评论系统，您可以填写真实的、虚假的信息作为您评论的展示信息。鼓励您使用不易被人恶意识别的昵称进行评论，但是建议您填写真实的邮箱以便收到回复。</p><ul><li>评论时会记录您的qq号（如果在邮箱位置填写qq邮箱或qq号），方便获取您的qq头像。如果使用QQ邮箱但不想展示QQ头像，可以填写不含QQ号的QQ邮箱。（主动，存储）</li><li>评论时会记录您的邮箱，当我回复后会通过邮件通知您（主动，存储，不会公开邮箱）</li><li>评论时会记录您的IP地址，作为反垃圾的用户判别依据（被动，存储，不会公开IP）</li><li>评论会记录您的浏览器代理，用作展示系统版本、浏览器版本方便展示您使用的设备，快速定位问题（被动，存储）</li></ul><h2 id="二、如何使用-Cookies-和本地-LocalStorage-存储"><a href="#二、如何使用-Cookies-和本地-LocalStorage-存储" class="headerlink" title="二、如何使用 Cookies 和本地 LocalStorage 存储"></a>二、如何使用 Cookies 和本地 LocalStorage 存储</h2><p>本站为实现无账号评论、深色模式切换，不蒜子的uv统计等功能，会在您的浏览器中进行本地存储，您可以随时清除浏览器中保存的所有 Cookies 以及 LocalStorage。<br>关于如何使用您的Cookies，<a href="https://hylove.top/cookies/">请访问Cookies政策</a>。<br>关于如何在<a href="https://support.google.com/chrome/answer/95647?co=GENIE.Platform=Desktop&amp;hl=zh-Hans">Chrome中清除、启用和管理 Cookie</a>。</p><h2 id="三、如何共享、转让您的个人信息"><a href="#三、如何共享、转让您的个人信息" class="headerlink" title="三、如何共享、转让您的个人信息"></a>三、如何共享、转让您的个人信息</h2><p>不会与任何公司、组织和个人共享您的个人信息<br>不会将您的个人信息转让给任何公司、组织和个人</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/json/music.json"/>
+      <url>/json/music.json</url>
+      
+        <content type="html"><![CDATA[[{"name":"青花瓷","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/青花瓷/青花瓷.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002eFUFm2XYZ7z_2.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/青花瓷/青花瓷.lrc"},{"name":"稻香","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/稻香/稻香.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/稻香/稻香.lrc"},{"name":"晴天","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/晴天/晴天.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000MkMni19ClKG_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/晴天/晴天.lrc"},{"name":"七里香","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/七里香/七里香.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003DFRzD192KKD_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/七里香/七里香.lrc"},{"name":"花海","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/花海/花海.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/花海/花海.lrc"},{"name":"反方向的钟","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/反方向的钟/反方向的钟.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000f01724fd7TH_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/反方向的钟/反方向的钟.lrc"},{"name":"兰亭序","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/兰亭序/兰亭序.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/兰亭序/兰亭序.lrc"},{"name":"说好的辛福呢","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/说好的辛福呢/说好的辛福呢.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/说好的辛福呢/说好的幸福呢.lrc"},{"name":"等你下课 (with 杨瑞代)","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/等你下课/等你下课.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003bSL0v4bpKAx_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/等你下课/等你下课.lrc"},{"name":"我落泪情绪零碎","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/我落泪情绪零碎/我落泪情绪零碎.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000bviBl4FjTpO_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/我落泪情绪零碎/我落泪情绪零碎.lrc"},{"name":"听妈妈的话","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/听妈妈的话/听妈妈的话.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002jLGWe16Tf1H_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/听妈妈的话/听妈妈的话.lrc"},{"name":"明明就","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/明明就/明明就.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003Ow85E3pnoqi_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/明明就/明明就.lrc"},{"name":"我是如此相信","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/我是如此相信/我是如此相信.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000001hGx1Z0so1YX_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/我是如此相信/我是如此相信.lrc"},{"name":"发如雪","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/发如雪/发如雪.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M0000024bjiL2aocxT_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/发如雪/发如雪.lrc"},{"name":"以父之名","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/以父之名/以父之名.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000MkMni19ClKG_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/以父之名/以父之名.lrc"},{"name":"园游会","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/园游会/园游会.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003DFRzD192KKD_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/园游会/园游会.lrc"},{"name":"本草纲目","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/本草纲目/本草纲目.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002jLGWe16Tf1H_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/本草纲目/本草纲目.lrc"},{"name":"龙卷风","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/龙卷风/龙卷风.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000f01724fd7TH_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/龙卷风/龙卷风.lrc"}]]]></content>
       
     </entry>
     
@@ -459,39 +492,6 @@
       <title>世界各地风景</title>
       <link href="/wordScenery/index.html"/>
       <url>/wordScenery/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/json/music.json"/>
-      <url>/json/music.json</url>
-      
-        <content type="html"><![CDATA[[{"name":"青花瓷","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/青花瓷/青花瓷.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002eFUFm2XYZ7z_2.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/青花瓷/青花瓷.lrc"},{"name":"稻香","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/稻香/稻香.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/稻香/稻香.lrc"},{"name":"晴天","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/晴天/晴天.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000MkMni19ClKG_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/晴天/晴天.lrc"},{"name":"七里香","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/七里香/七里香.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003DFRzD192KKD_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/七里香/七里香.lrc"},{"name":"花海","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/花海/花海.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/花海/花海.lrc"},{"name":"反方向的钟","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/反方向的钟/反方向的钟.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000f01724fd7TH_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/反方向的钟/反方向的钟.lrc"},{"name":"兰亭序","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/兰亭序/兰亭序.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/兰亭序/兰亭序.lrc"},{"name":"说好的辛福呢","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/说好的辛福呢/说好的辛福呢.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/说好的辛福呢/说好的幸福呢.lrc"},{"name":"等你下课 (with 杨瑞代)","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/等你下课/等你下课.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003bSL0v4bpKAx_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/等你下课/等你下课.lrc"},{"name":"我落泪情绪零碎","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/我落泪情绪零碎/我落泪情绪零碎.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000bviBl4FjTpO_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/我落泪情绪零碎/我落泪情绪零碎.lrc"},{"name":"听妈妈的话","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/听妈妈的话/听妈妈的话.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002jLGWe16Tf1H_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/听妈妈的话/听妈妈的话.lrc"},{"name":"明明就","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/明明就/明明就.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003Ow85E3pnoqi_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/明明就/明明就.lrc"},{"name":"我是如此相信","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/我是如此相信/我是如此相信.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000001hGx1Z0so1YX_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/我是如此相信/我是如此相信.lrc"},{"name":"发如雪","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/发如雪/发如雪.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M0000024bjiL2aocxT_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/发如雪/发如雪.lrc"},{"name":"以父之名","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/以父之名/以父之名.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000MkMni19ClKG_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/以父之名/以父之名.lrc"},{"name":"园游会","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/园游会/园游会.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003DFRzD192KKD_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/园游会/园游会.lrc"},{"name":"本草纲目","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/本草纲目/本草纲目.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002jLGWe16Tf1H_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/本草纲目/本草纲目.lrc"},{"name":"龙卷风","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/龙卷风/龙卷风.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000f01724fd7TH_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/龙卷风/龙卷风.lrc"}]]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>🕹️ 电玩城</title>
-      <link href="/game/index.html"/>
-      <url>/game/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>🎵音乐馆</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
